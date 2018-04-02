@@ -11,10 +11,12 @@ typedef struct{
   uint64_t *data;
 }image;
 
-image init(uint32_t largeur, uint32_t hauteur, uint16_t val_max);
+image init(TYPE_IMAGE type, uint32_t largeur, uint32_t hauteur, uint16_t val_max);
 image init_file(char* path);
 
-
 image ppmtopgm(image *img, float coeff_r, float coeff_v, float coeff_b);
+image ppmtopbm(image* ppm, float alpha);
+
+void creation_fichier(char* nom_fichier,image img);
 
 // image init_std();
